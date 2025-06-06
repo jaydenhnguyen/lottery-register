@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { useSelectedMoney, useSelectedNumber } from 'src/hooks';
-import { SelectedNumbersActionType } from 'src/context/selectedNumbers/types';
 import { SelectedMoneyActionType } from 'src/context/selectedMoney/type';
+import { SelectedNumbersActionType } from 'src/context/selectedNumbers/types';
 import classes from './ActionButtons.module.scss';
 
 type Props = {
@@ -38,7 +38,7 @@ export function ActionButtons({ setMaxAmount, setIsShowCashModal, setIsShowAskin
     }
 
     dispatchSelectedNumber({ type: SelectedNumbersActionType.SET_NUMBERS, payload: numbers });
-  }, [dispatchSelectedMoney, dispatchSelectedNumber, setMaxAmount]);
+  }, [dispatchSelectedNumber]);
 
   const onCash = React.useCallback(() => {
     if (selectedNumbers.length < 5) {

@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Card, NumberGrid, MoneySelector, MoneyInputModal, ActionButtons, OutputInfo } from 'src/components';
+import { Card, NumberGrid, MoneySelector, MoneyInputModal, ActionButtons, OutputInfo, CashModal } from 'src/components';
 import classes from './Home.module.scss';
 
 export function Home(): React.ReactElement {
   const [isOpenMoneyInputModal, setIsOpenMoneyInputModal] = React.useState<boolean>(false);
+  const [isOpenCashModal, setIsOpenCashModal] = React.useState<boolean>(false);
   const [maxMoneyAmount, setMaxMoneyAmount] = React.useState<number>(0);
 
   return (
@@ -34,7 +35,7 @@ export function Home(): React.ReactElement {
 
               <ActionButtons
                 setMaxAmount={setMaxMoneyAmount}
-                setIsShowCashModal={() => []}
+                setIsShowCashModal={setIsOpenCashModal}
                 setIsShowAskingModal={setIsOpenMoneyInputModal}
               />
             </div>
@@ -51,6 +52,8 @@ export function Home(): React.ReactElement {
         onClose={() => setIsOpenMoneyInputModal(false)}
         onSubmit={setMaxMoneyAmount}
       />
+
+      <CashModal isOpen={isOpenCashModal} onClose={() => setIsOpenCashModal(false)} setMaxAmount={setMaxMoneyAmount} />
     </>
   );
 }
