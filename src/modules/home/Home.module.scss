@@ -1,0 +1,20 @@
+.wrapper {
+  @apply min-h-[100vh] p-4;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+}
+
+.maxWidth {
+  @apply max-w-[112rem] mx-auto my-0;
+}
+
+.header {
+  @apply text-center mb-8;
+}
+
+.title {
+  @apply text-[2.25rem] font-bold text-[#1f2937] mb-2;
+}
+
+.subtitle {
+  @apply text-lg text-[#4b5563];
+}
