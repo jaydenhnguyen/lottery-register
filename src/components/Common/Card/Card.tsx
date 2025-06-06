@@ -12,7 +12,7 @@ export function Card({ title, subTitle, children }: Props): React.ReactElement {
     <div className={classes['wrapper']}>
       <h2 className={classes['title']}>
         {title}
-        <span className={classes['subtitle']}>{subTitle}</span>
+        {subTitle && <span className={classes['subtitle']}>{subTitle}</span>}
       </h2>
       {children}
     </div>

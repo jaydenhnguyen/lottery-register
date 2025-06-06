@@ -1,0 +1,79 @@
+.overlay {
+  @apply fixed inset-0 flex items-center justify-center p-4 z-50;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-wrapper {
+  @apply bg-white rounded-lg max-w-md w-full p-0 outline-none;
+}
+
+.modal-content {
+  @apply p-6;
+}
+
+.modal-title {
+  @apply text-2xl font-bold text-[#1f2937] mb-2;
+}
+
+.modal-description {
+  @apply text-[#4b5563] mb-6;
+}
+
+.form-wrapper {
+  @apply flex flex-col gap-6;
+}
+
+.input-group {
+  @apply flex flex-col gap-2;
+}
+
+.field-label {
+  @apply font-medium text-[#374151];
+}
+
+.input-money-wrapper {
+  @apply relative flex items-center;
+}
+
+.currency-symbol {
+  @apply absolute left-3 text-[#6b7280] font-medium
+}
+
+.input-money {
+  @apply w-full p-3 pl-7 border-solid border-[1px] border-[#d1d5db] rounded-md text-[1.125rem] outline-none;
+  transition: border-color 0.2s ease;
+}
+
+.input-money:focus {
+  @apply border-[#3b82f6];
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.error-text {
+  @apply text-[#dc2626] text-[0.875rem] mt-1;
+}
+
+.btb-group {
+  @apply flex justify-end gap-3 mt-2;
+}
+
+.btn {
+  @apply px-4 py-2 font-medium border-none rounded-md cursor-pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-btn {
+  @apply bg-[#f3f4f6] text-[#374151]
+}
+
+.cancel-btn:hover {
+  @apply bg-[#e5e7eb];
+}
+
+.submit-btn {
+  @apply bg-[#3b82f6] text-white
+}
+
+.submit-btn:hover {
+  @apply bg-[#2563eb]
+}
