@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, NumberGrid, MoneySelector, MoneyInputModal, ActionButtons } from 'src/components';
+import { Card, NumberGrid, MoneySelector, MoneyInputModal, ActionButtons, OutputInfo } from 'src/components';
 import classes from './Home.module.scss';
 
 export function Home(): React.ReactElement {
@@ -9,7 +9,7 @@ export function Home(): React.ReactElement {
   return (
     <>
       <div className={classes['wrapper']}>
-        <div className={classes['maxWith']}>
+        <div className={classes['max-width']}>
           <header className={classes['header']}>
             <h1 className={classes['title']}>WHE WHE Cash Register</h1>
             <p className={classes['subtitle']}>Select 5 numbers and assign a money value</p>
@@ -23,7 +23,11 @@ export function Home(): React.ReactElement {
 
               <Card
                 title={'Money Values'}
-                subTitle={maxMoneyAmount > 0 ? `(Max: $${maxMoneyAmount.toFixed(2)})` : undefined}
+                subTitle={
+                  maxMoneyAmount > 0
+                    ? `(Max: $${maxMoneyAmount.toFixed(2)})`
+                    : '(Asking the customer to know how much they play)'
+                }
               >
                 <MoneySelector maxAmount={maxMoneyAmount} />
               </Card>
@@ -36,7 +40,7 @@ export function Home(): React.ReactElement {
             </div>
 
             <div className={classes['right-side-wrapper']}>
-              {/*<SelectedNumbers selectedNumbers={selectedNumbers} totalAmount={totalAmount} />*/}
+              <OutputInfo maxAmount={maxMoneyAmount} />
             </div>
           </div>
         </div>

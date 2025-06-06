@@ -10,10 +10,10 @@ type Props = {
 export function Card({ title, subTitle, children }: Props): React.ReactElement {
   return (
     <div className={classes['wrapper']}>
-      <h2 className={classes['title']}>
-        {title}
+      <div className={classes['title-wrapper']}>
+        <h2 className={classes['title']}>{title}</h2>
         {subTitle && <span className={classes['subtitle']}>{subTitle}</span>}
-      </h2>
+      </div>
       {children}
     </div>
   );

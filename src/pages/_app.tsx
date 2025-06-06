@@ -3,8 +3,8 @@ import 'src/styles/_app.scss';
 import 'src/styles/_core.scss';
 import 'src/styles/tailwind.scss';
 import { AppProps } from 'next/app';
-import { SelectedNumbersProvider } from '../context/selectedNumbers';
-import { SelectedMoneyProvider } from '../context/selectedMoney';
+import { SelectedMoneyProvider } from 'src/context/selectedMoney';
+import { SelectedNumbersProvider } from 'src/context/selectedNumbers';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

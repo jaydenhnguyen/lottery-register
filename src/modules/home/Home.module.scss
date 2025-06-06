@@ -1,10 +1,10 @@
 .wrapper {
-  @apply min-h-[100vh] p-4;
+  @apply h-full;
   background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
 }
 
-.maxWidth {
-  @apply max-w-[112rem] mx-auto my-0;
+.max-width {
+  @apply p-4 max-w-[112rem] mx-auto my-0;
 }
 
 .header {

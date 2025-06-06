@@ -38,8 +38,6 @@ export function ActionButtons({ setMaxAmount, setIsShowCashModal, setIsShowAskin
     }
 
     dispatchSelectedNumber({ type: SelectedNumbersActionType.SET_NUMBERS, payload: numbers });
-    dispatchSelectedMoney({ type: SelectedMoneyActionType.CLEAR_MONEY });
-    setMaxAmount(0);
   }, [dispatchSelectedMoney, dispatchSelectedNumber, setMaxAmount]);
 
   const onCash = React.useCallback(() => {
@@ -48,7 +46,7 @@ export function ActionButtons({ setMaxAmount, setIsShowCashModal, setIsShowAskin
       return;
     }
     if (totalAmount === 0) {
-      alert('You must assign a money value!');
+      alert('You must choosing money value!');
       return;
     }
     setIsShowCashModal(true);

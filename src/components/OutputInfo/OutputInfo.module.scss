@@ -1,0 +1,82 @@
+.output-info-wrapper {
+  @apply bg-white rounded-lg p-6 sticky top-4;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  @apply text-2xl font-semibold text-[#1f2937] mb-4;
+}
+
+.content {
+  @apply flex flex-col gap-4;
+}
+
+.section {
+  @apply flex flex-col gap-2;
+}
+
+.section-title {
+  @apply text-[1.125rem] font-medium text-[#374151];
+}
+
+.numbers-container {
+  @apply flex flex-wrap gap-2;
+}
+
+.number-badge {
+  @apply bg-[#dbeafe] text-[#1e40af] px-3 py-1 rounded-full font-semibold;
+}
+
+.empty-state {
+  @apply text-[#6b7280] italic
+}
+
+.counter {
+  @apply text-sm text-[#4b5563] mt-2;
+}
+
+.amount-section {
+  @apply border-[1px] border-solid border-t-[#e5e7eb] border-x-0 border-b-0 pt-4;
+}
+
+.total-amount {
+  @apply text-3xl font-bold text-[#059669];
+}
+
+.max-amount-display {
+  @apply mt-4 p-3 bg-[#f9fafb] rounded-lg border-[1px] border-solid border-[#e5e7eb];
+}
+
+.max-amount-label {
+  @apply text-sm text-[#4b5563] mr-2;
+}
+
+.ax-amount-value {
+  @apply font-semibold text-[#374151];
+}
+
+.progress-bar {
+  @apply h-2 bg-[#e5e7eb] rounded-full mx-0 my-2 overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-[#3b82f6] rounded-full;
+  transition: width 0.3s ease;
+}
+
+.remaining-amount {
+  @apply text-sm text-[#4b5563] text-right
+}
+
+.ready-notification {
+  @apply bg-[#f0fdf4] border-[1px] border-solid border-[#bbf7d0] rounded-lg p-4 mt-4;
+}
+
+.ready-title {
+  @apply text-[#166534] font-semibold;
+}
+
+.ready-subtitle {
+  @apply text-sm text-[#16a34a] mt-1;
+}
+

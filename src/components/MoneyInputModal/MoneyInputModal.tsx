@@ -13,25 +13,32 @@ export function MoneyInputModal({ isOpen, onClose, onSubmit }: Props): React.Rea
   const [amount, setAmount] = React.useState<string>('');
   const [error, setError] = React.useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const numAmount = Number.parseFloat(amount);
-    if (isNaN(numAmount) || numAmount <= 0) {
-      setError('Please enter a valid amount greater than 0');
-      return;
-    }
-
-    onSubmit(numAmount);
+  const closingModal = React.useCallback(() => {
     setAmount('');
     setError('');
     onClose();
-  };
+  }, [onClose]);
+
+  const handleSubmit = React.useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+
+      const numAmount = Number.parseFloat(amount);
+      if (isNaN(numAmount) || numAmount <= 0) {
+        setError('Please enter a valid amount greater than 0');
+        return;
+      }
+
+      onSubmit(numAmount);
+      closingModal();
+    },
+    [amount, closingModal, onSubmit],
+  );
 
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={onClose}
+      onRequestClose={closingModal}
       contentLabel="Enter Money Amount"
       className={classes['modal-wrapper']}
       overlayClassName={classes['overlay']}
@@ -66,7 +73,7 @@ export function MoneyInputModal({ isOpen, onClose, onSubmit }: Props): React.Rea
           </div>
 
           <div className={classes['btb-group']}>
-            <button type="button" onClick={onClose} className={classNames(classes['btn'], classes['cancel-btn'])}>
+            <button type="button" onClick={closingModal} className={classNames(classes['btn'], classes['cancel-btn'])}>
               Cancel
             </button>
 
