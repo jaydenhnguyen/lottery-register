@@ -1,7 +1,7 @@
 import * as React from 'react';
-import classes from './NumberButton.module.scss';
 import classNames from 'classnames';
 import { useSelectedNumber } from 'src/hooks';
+import classes from './NumberButton.module.scss';
 
 type Props = {
   numberValue: number;

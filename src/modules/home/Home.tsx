@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, NumberGrid } from 'src/components';
+import { Card, NumberGrid, MoneySelector } from 'src/components';
 import classes from './Home.module.scss';
 
 export function Home(): React.ReactElement {
@@ -17,9 +17,9 @@ export function Home(): React.ReactElement {
               <NumberGrid />
             </Card>
 
-            {/*<Card title={'Money Values'}>*/}
-            {/*  <MoneySelector onMoneySelect={handleMoneySelect} disabled={selectedNumbers.length < 5} />*/}
-            {/*</Card>*/}
+            <Card title={'Money Values'}>
+              <MoneySelector maxAmount={100} />
+            </Card>
 
             {/*<ActionButtons onClear={handleClear} onRandom={handleRandom} onCash={handleCash} />*/}
           </div>

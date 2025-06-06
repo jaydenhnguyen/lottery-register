@@ -1,0 +1,18 @@
+.wrapper {
+  @apply px-6 py-4 rounded-lg font-semibold text-[1.125rem] border-none cursor-pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.enabled {
+  @apply bg-[#10b981] text-white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.enabled:hover {
+  @apply bg-[#059669];
+  transform: scale(1.05);
+}
+
+.disabled {
+  @apply bg-[#e5e7eb] text-[#9ca3af] cursor-not-allowed;
+}

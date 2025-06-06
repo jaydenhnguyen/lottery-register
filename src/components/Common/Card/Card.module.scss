@@ -4,5 +4,10 @@
 }
 
 .title {
-  @apply text-2xl font-semibold text-[#1f2937] mb-4;
+  @apply flex items-center justify-center text-2xl font-semibold text-[#1f2937] mb-4;
+}
+
+.subtitle {
+  @apply text-base text-[#4b5563] ml-2;
+  font-weight: normal;
 }

@@ -1,6 +1,6 @@
 import { SelectedNumbersAction, SelectedNumbersActionType, SelectedNumbersState } from './types';
 
-export const initialState: SelectedNumbersState = {
+export const initialSelectedNumbers: SelectedNumbersState = {
   selectedNumbers: [],
 };
 
