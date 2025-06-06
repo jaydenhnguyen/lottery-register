@@ -9,7 +9,7 @@ export type SelectedMoneyState = {
 
 export type SelectedMoneyAction = {
   type: SelectedMoneyActionType;
-  payload: {
+  payload?: {
     amount: number;
   };
 };

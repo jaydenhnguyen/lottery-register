@@ -7,7 +7,7 @@ export const initialSelectedMoney: SelectedMoneyState = {
 export function selectedMoneyReducer(state = initialSelectedMoney, action: SelectedMoneyAction): SelectedMoneyState {
   switch (action.type) {
     case SelectedMoneyActionType.ADD_MONEY:
-      return { ...state, total: state.total + action.payload.amount };
+      return { ...state, total: state.total + (action.payload?.amount ?? 0) };
     case SelectedMoneyActionType.CLEAR_MONEY:
       return { ...state, total: 0 };
     default:

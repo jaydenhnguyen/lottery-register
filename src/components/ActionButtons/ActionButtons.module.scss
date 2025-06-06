@@ -1,0 +1,56 @@
+.action-btn-wrapper {
+  @apply bg-white rounded-lg p-6;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-grid {
+  @apply grid gap-4;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .btn-grid {
+    @apply grid-cols-4
+  }
+}
+
+.btn {
+  @apply px-6 py-3 font-semibold rounded-lg border-none cursor-pointer text-white;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.clear-btn {
+  @apply bg-[#ef4444];
+}
+
+.clear-btn:hover {
+  @apply bg-[#dc2626]
+}
+
+.random-btn {
+  @apply bg-[#8b5cf6];
+}
+
+.random-btn:hover {
+  @apply bg-[#7c3aed];
+}
+
+.cash-btn {
+  @apply bg-[#eab308]
+}
+
+.cash-btn:hover {
+  @apply bg-[#ca8a04];
+}
+
+.asking-btn {
+  @apply bg-[#0ea5e9];
+}
+
+.asking-btn:hover {
+  @apply bg-[#0284c7];
+}

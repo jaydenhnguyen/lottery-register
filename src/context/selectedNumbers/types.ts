@@ -9,5 +9,5 @@ export type SelectedNumbersState = {
 
 export type SelectedNumbersAction = {
   type: SelectedNumbersActionType;
-  payload: number[];
+  payload?: number[];
 };

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Card, NumberGrid, MoneySelector, MoneyInputModal } from 'src/components';
+import { Card, NumberGrid, MoneySelector, MoneyInputModal, ActionButtons } from 'src/components';
 import classes from './Home.module.scss';
 
 export function Home(): React.ReactElement {
-  const [isOpenMoneyInputModal, setIsOpenMoneyInputModal] = React.useState<boolean>(true);
+  const [isOpenMoneyInputModal, setIsOpenMoneyInputModal] = React.useState<boolean>(false);
   const [maxMoneyAmount, setMaxMoneyAmount] = React.useState<number>(0);
 
   return (
@@ -28,7 +28,11 @@ export function Home(): React.ReactElement {
                 <MoneySelector maxAmount={maxMoneyAmount} />
               </Card>
 
-              {/*<ActionButtons onClear={handleClear} onRandom={handleRandom} onCash={handleCash} />*/}
+              <ActionButtons
+                setMaxAmount={setMaxMoneyAmount}
+                setIsShowCashModal={() => []}
+                setIsShowAskingModal={setIsOpenMoneyInputModal}
+              />
             </div>
 
             <div className={classes['right-side-wrapper']}>

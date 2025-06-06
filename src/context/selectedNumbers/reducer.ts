@@ -10,7 +10,7 @@ export function selectedNumbersReducer(
 ): SelectedNumbersState {
   switch (action.type) {
     case SelectedNumbersActionType.SET_NUMBERS:
-      return { ...state, selectedNumbers: action.payload };
+      return { ...state, selectedNumbers: action.payload ?? [] };
     case SelectedNumbersActionType.CLEAR_NUMBERS:
       return { ...state, selectedNumbers: [] };
     default:
