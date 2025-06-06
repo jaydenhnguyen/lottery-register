@@ -1,0 +1,20 @@
+.wrapper {
+  @apply w-16 h-16 rounded-lg font-bold text-[1.125rem] cursor-pointer border-none;
+}
+
+.wrapper:hover {
+  transform: scale(1.05);
+}
+
+.selected {
+  @apply bg-[#2563eb] text-white border-4 border-solid border-[#1d4ed8];
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.unselected {
+  @apply bg-[#f3f4f6] text-[#374151] border-2 border-solid border-[#d1d5db];
+}
+
+.unselected:hover {
+  @apply bg-[#e5e7eb];
+}

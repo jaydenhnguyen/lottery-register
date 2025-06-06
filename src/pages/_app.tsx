@@ -3,6 +3,7 @@ import 'src/styles/_app.scss';
 import 'src/styles/_core.scss';
 import 'src/styles/tailwind.scss';
 import { AppProps } from 'next/app';
+import { SelectedNumbersProvider } from '../context/selectedNumbers';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -18,7 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <Component {...pageProps} />
+      <SelectedNumbersProvider>
+        <Component {...pageProps} />
+      </SelectedNumbersProvider>
     </>
   );
 }
