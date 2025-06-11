@@ -1,24 +1,16 @@
 import * as React from 'react';
-import { useSelectedNumber } from 'src/hooks';
-import { SelectedNumbersActionType } from 'src/context/selectedNumbers/types';
-import { NumberButton } from '../NumberButton';
+import {useSelectedNumber} from 'src/hooks';
+import {SelectedNumbersActionType} from 'src/context/selectedNumbers/types';
+import {NumberButton} from '../NumberButton';
 import classes from './NumberGrid.module.scss';
 
-const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+const numbers = Array.from({length: 20}, (_, i) => i + 1);
 
 export function NumberGrid(): React.ReactElement {
   const {
-    state: { selectedNumbers },
+    state: {selectedNumbers},
     dispatch,
   } = useSelectedNumber();
-
-  const handleUnSelect = React.useCallback(
-    (selectingValue: number) => {
-      const newSelectedNumbers = selectedNumbers.filter((n) => n !== selectingValue);
-      dispatch({ type: SelectedNumbersActionType.SET_NUMBERS, payload: newSelectedNumbers });
-    },
-    [dispatch, selectedNumbers],
-  );
 
   const handleSelect = React.useCallback(
     (selectingValue: number) => {
@@ -26,12 +18,21 @@ export function NumberGrid(): React.ReactElement {
         alert('You can only select 5 numbers!');
         return;
       }
-      dispatch({ type: SelectedNumbersActionType.SET_NUMBERS, payload: [...selectedNumbers, selectingValue] });
+      dispatch({type: SelectedNumbersActionType.SET_NUMBERS, payload: [...selectedNumbers, selectingValue]});
     },
     [dispatch, selectedNumbers],
   );
 
-  const handleOnSelected = React.useCallback(
+
+  const handleUnSelect = React.useCallback(
+    (selectingValue: number) => {
+      const newSelectedNumbers = selectedNumbers.filter((n) => n !== selectingValue);
+      dispatch({type: SelectedNumbersActionType.SET_NUMBERS, payload: newSelectedNumbers});
+    },
+    [dispatch, selectedNumbers],
+  );
+
+  const handleOnClick = React.useCallback(
     (selectingValue: number) => {
       if (selectedNumbers.includes(selectingValue)) handleUnSelect(selectingValue);
       else handleSelect(selectingValue);
@@ -42,7 +43,7 @@ export function NumberGrid(): React.ReactElement {
   return (
     <div className={classes['wrapper']}>
       {numbers.map((number, idx) => {
-        return <NumberButton key={`N_${number}_${idx}`} onSelect={handleOnSelected} numberValue={number} />;
+        return <NumberButton key={`N_${number}_${idx}`} onClick={handleOnClick} numberValue={number}/>;
       })}
     </div>
   );

@@ -1,16 +1,16 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { useSelectedNumber } from 'src/hooks';
+import {useSelectedNumber} from 'src/hooks';
 import classes from './NumberButton.module.scss';
 
 type Props = {
   numberValue: number;
-  onSelect: (numberValue: number) => void;
+  onClick: (numberValue: number) => void;
 };
 
-export function NumberButton({ numberValue, onSelect }: Props): React.ReactElement {
+export function NumberButton({numberValue, onClick}: Props): React.ReactElement {
   const {
-    state: { selectedNumbers },
+    state: {selectedNumbers},
   } = useSelectedNumber();
 
   const isSelected = React.useMemo(() => selectedNumbers.includes(numberValue), [numberValue, selectedNumbers]);
@@ -18,7 +18,7 @@ export function NumberButton({ numberValue, onSelect }: Props): React.ReactEleme
   return (
     <button
       className={classNames(classes['wrapper'], isSelected ? classes['selected'] : classes['unselected'])}
-      onClick={() => onSelect(numberValue)}
+      onClick={() => onClick(numberValue)}
     >
       {numberValue}
     </button>
